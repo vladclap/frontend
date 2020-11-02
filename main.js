@@ -1,5 +1,5 @@
 async function getDoctor(){
-    let res = await fetch('http://api')
+    let res = await fetch('http://api/doctor')
     let doctors = await res.json();
     console.log(doctors[0]);
 
@@ -7,6 +7,8 @@ async function getDoctor(){
     doctors.forEach((doctor) => {
 
        document.querySelector('.table').innerHTML += '' +
+           '<div class="row"\n'+
+           '<div class="col-sm-4">\n'+
            '  <div class="card">\n' +
            '            <img src="image/'+doctor.picture+'.jpg" alt="avatar" width="208" height="208">\n' +
            '            <p>'+doctor.name+'</p>\n' +
@@ -16,11 +18,17 @@ async function getDoctor(){
            '            </div>\n' +
            '            <div class="card-btns">\n' +
            '                <button>Payment</button>\n' +
-           '                <button>View Profile</button>\n' +
+           '                <button  onclick="addDoctor()">Add Doctor</button>\n' +
            '            </div>\n' +
+           '        </div>'+
+           '        </div>'+
            '        </div>'
 
     })
 }
 
+async function addDoctor(){
+
+}
 getDoctor()
+
