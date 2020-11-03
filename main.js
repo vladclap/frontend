@@ -1,9 +1,9 @@
 async function getDoctor(){
     let res = await fetch('http://api/doctor')
     let doctors = await res.json();
-    console.log(doctors[0]);
 
 
+    document.querySelector('.table').innerHTML += '' +
     doctors.forEach((doctor) => {
 
        document.querySelector('.table').innerHTML += '' +
@@ -17,7 +17,7 @@ async function getDoctor(){
            '                * * * * *\n' +
            '            </div>\n' +
            '            <div class="card-btns">\n' +
-           '                <button onclick="removeDoctor(doctor.id)">Remove</button>\n' +
+           '                <button onclick="removeDoctor('+doctor.id+')">Remove</button>\n' +
            '                <button  onclick="">View info</button>\n' +
            '            </div>\n' +
            '        </div>'+
