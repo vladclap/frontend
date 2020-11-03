@@ -17,8 +17,8 @@ async function getDoctor(){
            '                * * * * *\n' +
            '            </div>\n' +
            '            <div class="card-btns">\n' +
-           '                <button>Payment</button>\n' +
-           '                <button  onclick="addDoctor()">Add Doctor</button>\n' +
+           '                <button onclick="removeDoctor(doctor.id)">Remove</button>\n' +
+           '                <button  onclick="">View info</button>\n' +
            '            </div>\n' +
            '        </div>'+
            '        </div>'+
@@ -26,9 +26,41 @@ async function getDoctor(){
 
     })
 }
-
-async function addDoctor(){
-
-}
 getDoctor()
+
+async function addDoctor() {
+    name = document.getElementById('name').value
+    picture = document.getElementById('picture').value
+    rating = document.getElementById('rating').value
+    specialty = document.getElementById('specialty').value;
+
+        let formData = new FormData();
+    formData.append('name',name);
+    formData.append('picture',picture);
+    formData.append('rating',rating);
+    formData.append('specialty',specialty);
+
+
+    const res = await fetch('http://api/doctor', {
+        method: 'POST',
+        body: formData
+    });
+    const data = res.json();
+
+    console.log(data)
+}
+
+async function removeDoctor(id){
+    const res = await fetch('http://api/doctor/'+id+'',  {
+
+        method: "DELETE"
+    });
+
+    const data = await res.json()
+        if (data.staus === true){
+            await getDoctor();
+        }
+}
+
+
 

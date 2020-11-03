@@ -8,6 +8,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <header>
     <div class="content">
@@ -32,7 +33,42 @@
     </div>
 </header>
     <div class="action-btns">
-        <button>Add Member</button>
+
+        <div class="w3-container">
+            <h2></h2>
+            <button onclick="document.getElementById('id01').style.display='block'">Add Doctor</button>
+
+            <div id="id01" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+
+                    <div class="w3-center"><br>
+                        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close Modal">&times;</span>
+
+                    </div>
+
+                    <form class="w3-container" action="">
+                        <div class="w3-section">
+                            <label><b>Name</b></label>
+                            <input class="w3-input w3-border w3-margin-bottom" id="name" type="text" placeholder="Name" name="usrname" required>
+                            <label><b>Picture</b></label>
+                            <input class="w3-input w3-border" id="picture" type="text" placeholder="Picture" name="psw" required>
+                            <label><b>Rating</b></label>
+                            <input class="w3-input w3-border" id="rating" type="number" placeholder="Rating" name="psw" required>
+                            <label><b>Specialty</b></label>
+                            <input class="w3-input w3-border" id="specialty" type="text" placeholder="Specialty" name="psw" required>
+                            <button type="submit" onclick="addDoctor()">Add</button>
+
+                        </div>
+                    </form>
+
+                    <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+                        <button onclick="document.getElementById('id01').style.display='none'" type="button">Cancel</button>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
         <div class="nav">
             <button>Previous</button>
             <button>Next</button>
@@ -41,23 +77,31 @@
     <div class="table">
 
     </div>
-<form>
-    <div class="form-group">
-        <label for="exampleInputEmail1"> Email </label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
-        <small id="emailHelp" class="form-text text-muted">Please input your email</small>
-    </div>
-    <div class="form-group">
-        <label for="exampleInputPassword1"> Password </label>
-        <input type="password" class="form-control" id="exampleInputPassword1" >
-    </div>
-    <div class="form-group form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1"> Check me out </label>
-    </div>
-    <button type="submit" class="btn btn-primary"> Submit </button>
+<!--<form>-->
+<!--    <div class="form-row">-->
+<!--        <div class="col-md-4 mb-3">-->
+<!--            <label for="validationDefault01">Name</label>-->
+<!--            <input type="text" class="form-control" id="validationDefault01" placeholder="Name" value="" required>-->
+<!--        </div>-->
+<!--        <div class="col-md-4 mb-3">-->
+<!--            <label for="validationDefault02">Picture</label>-->
+<!--            <input type="text" class="form-control" id="validationDefault02" placeholder="Picture" value="" required>-->
+<!--        </div>-->
 
-</form>
+<!--    </div>-->
+<!--    <div class="form-row">-->
+<!--        <div class="col-md-6 mb-3">-->
+<!--            <label for="validationDefault03">Rating</label>-->
+<!--            <input type="text" class="form-control" id="validationDefault03" placeholder="Rating" required>-->
+<!--        </div>-->
+<!--        <div class="col-md-3 mb-3">-->
+<!--            <label for="validationDefault04">Specialty</label>-->
+<!--            <input type="text" class="form-control" id="validationDefault04" placeholder="Specialty" required>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <button class="btn btn-primary" type="submit">Submit form</button>-->
+<!--</form>-->
+
 <script src="main.js"></script>
 </body>
 </html>
