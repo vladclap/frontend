@@ -22,6 +22,10 @@ header {
     box-shadow: 4px 4px 10px 0 rgba(0,0,0,0.1);
 }
 
+.icon img{
+    height: 40px;
+    width: 40px;
+}
 button {
     cursor: pointer;
 }
@@ -103,7 +107,10 @@ input {
     outline: none;
     box-shadow: 4px 4px 10px 0 rgba(0,0,0,0.1);
 }
-
+.action-btns button:hover {
+    color: white;
+    background-color: grey;
+}
 .nav button{
     margin-left: -4px;
 }
@@ -130,13 +137,27 @@ input {
     padding: 4px;
 }
 
-.card button {
-    border: none;
-    outline: none;
-    background-color: white;
-    margin: 0 16px;
+.card img {
+    height: 100px;
+    width: 100px;
+    border-radius: 100px; /* Радиус скругления */
+    border: 1px solid #737879; /* Параметры рамки */
 }
 
+
+
+.card button {
+    width: 100px;
+    padding: 8px 0;
+    background-color: white;
+    border: none;
+    outline: none;
+    box-shadow: 4px 4px 10px 0 rgba(0,0,0,0.1);
+}
+.card button:hover{
+    background-color: #5078be;
+    color: white;
+}
 .rating {
     font-size: 2rem;
     color: gold;
@@ -145,39 +166,82 @@ input {
 .description {
     color: #bbbbbb;
 }
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+.stars input {
+    position: absolute;
+    left: -999999px;
 }
 
-/* Modal Content/Box */
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-}
-
-/* The Close Button */
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
+.stars a {
+    display: inline-block;
+    padding-right:4px;
     text-decoration: none;
-    cursor: pointer;
+    margin:0;
 }
+
+.stars a:after {
+    position: relative;
+    font-size: 18px;
+    font-family: 'FontAwesome', serif;
+    display: block;
+    content: "\f005";
+    color: #9e9e9e;
+}
+
+
+span {
+    font-size: 0; /* trick to remove inline-element's margin */
+}
+
+.stars a:hover ~ a:after{
+    color: #9e9e9e !important;
+}
+span.active a.active ~ a:after{
+    color: #9e9e9e;
+}
+
+span:hover a:after{
+    color:gold !important;
+}
+
+span.active a:after,
+.stars a.active:after{
+    color:gold;
+}
+
+{
+    box-sizing: border-box;
+}
+
+
+.table {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.card {
+    flex: 25%;
+    padding: 20px;
+    width: 240px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    box-shadow: 4px 4px 10px 0 rgba(0,0,0,0.1);
+    margin:  0 10px 20px 10px;
+}
+
+
+@media screen and (max-width: 992px) {
+    .card {
+        flex: 50%;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    .table {
+        flex-direction: column;
+    }
+}
+
