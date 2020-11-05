@@ -108,11 +108,11 @@ input {
     box-shadow: 4px 4px 10px 0 rgba(0,0,0,0.1);
 }
 .action-btns button:hover {
-    color: white;
+        color: white;
     background-color: grey;
 }
 .nav button{
-    margin-left: -4px;
+    margin-left: 0px;
 }
 
 .table {
@@ -217,8 +217,32 @@ span.active a:after,
     display: flex;
     flex-wrap: wrap;
 }
+.burger div {
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    margin: 6px 0;
+    display: none;
+}
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+}
 
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
 
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+}
 .card {
     flex: 25%;
     padding: 20px;
@@ -229,15 +253,26 @@ span.active a:after,
     background-color: white;
     box-shadow: 4px 4px 10px 0 rgba(0,0,0,0.1);
     margin:  0 10px 20px 10px;
+    max-width: 250px;
 }
 
 
 @media screen and (max-width: 992px) {
     .table {
         width: auto;
-        margin: auto;
+        margin-left: 70px;
         display: flex;
         flex-wrap: wrap;
+
+    }
+}
+@media screen and (max-width: 1024px) {
+    .table {
+        width: auto;
+        margin-left: 50px;
+        display: flex;
+        flex-wrap: wrap;
+
     }
 }
 
@@ -251,12 +286,14 @@ span.active a:after,
 @media screen and (max-width: 600px) {
     .table {
         flex-direction: column;
+
     }
 }
 
 @media screen and (max-width: 1024px) {
     .card {
         flex: 40%;
+
     }
 }
 @media screen and (max-width: 1024px) {
@@ -267,5 +304,29 @@ span.active a:after,
         justify-content: space-between;
     }
 }
+
+@media screen and (max-width: 750px) {
+    .search {
+        display: none;
+    }
+    .contact {
+        display: none;
+    }
+    .dropdown{
+        display: none;
+    }
+    .logo{
+       display: none;
+    }
+    .burger div{
+        width: 35px;
+        height: 5px;
+        background-color: black;
+        margin: 6px 0;
+        display: block;
+    }
+}
+
+
 
 
