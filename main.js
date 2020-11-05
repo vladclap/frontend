@@ -30,7 +30,7 @@ async function getDoctor(){
 
     })
 }
-// getDoctor()
+getDoctor()
 
 async function addDoctor() {
     name = document.getElementById('name').value

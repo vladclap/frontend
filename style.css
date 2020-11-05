@@ -233,8 +233,17 @@ span.active a:after,
 
 
 @media screen and (max-width: 992px) {
+    .table {
+        width: auto;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 1024px) {
     .card {
-        flex: 50%;
+        flex: 40%;
     }
 }
 
@@ -244,4 +253,19 @@ span.active a:after,
         flex-direction: column;
     }
 }
+
+@media screen and (max-width: 1024px) {
+    .card {
+        flex: 40%;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .action-btns {
+        width: auto;
+        margin: 20px auto;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
 
