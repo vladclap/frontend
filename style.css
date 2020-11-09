@@ -422,15 +422,14 @@ span.active a:after,
         width: auto;
     }
     .menu__btn {
-        display: flex; /* используем flex для центрирования содержимого */
-        align-items: center;  /* центрируем содержимое кнопки */
-        position: fixed;
+        display: flex;
+        align-items: center;
+        position: absolute;
         top: 20px;
         left: 20px;
         width: 26px;
         height: 26px;
         cursor: pointer;
-        z-index: 1;
     }
     /* добавляем "гамбургер" */
     .menu__btn > span,
