@@ -13,7 +13,7 @@ body {
 }
 
 header {
-    height: 60px;
+    height: 80px;
     padding: 0 20px;
     background-color: white;
     display: flex;
@@ -24,21 +24,29 @@ header {
 
 .icon img{
 
-    height: 40px;
-    width: 40px;
+    height:auto;
+    width: 100px;
 }
 button {
     cursor: pointer;
 }
 
 .content {
-    width: 1000px;
+
+    width: 1500px;
     display: flex;
+
     justify-content: space-between;
 }
 
 .contact *{
     padding-left: 15px;
+}
+.contact img{
+    height: 50px;
+    width: 50px;
+
+
 }
 
 input {
@@ -67,7 +75,7 @@ input {
 }
 
 .dropdown-content {
-    background-color: white;
+    background-color: #ededed;
     display: none;
     position: absolute;
     min-width: 160px;
@@ -77,7 +85,7 @@ input {
 
 .dropdown-content a {
     float: none;
-    padding: 12px 16px;
+    padding: 12px 1px;
     text-decoration: none;
     display: block;
     text-align: left;
@@ -85,6 +93,7 @@ input {
 
 .dropdown-content a:hover {
     color: lightskyblue;
+    background-color: #ddd;
 }
 
 .dropdown:hover .dropdown-content {
@@ -94,7 +103,7 @@ input {
 /**/
 
 .action-btns {
-    width: 1020px;
+    width: 912px;
     margin: 20px auto;
     display: flex;
     justify-content: space-between;
@@ -278,7 +287,7 @@ span.active a:after,
 .menu__btn > span::before,
 .menu__btn > span::after {
     display: none;
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 2px;
     background-color: #616161;
@@ -347,7 +356,7 @@ span.active a:after,
     }
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 760px) {
 
     .table{
 
@@ -383,7 +392,7 @@ span.active a:after,
     .menu__btn > span::before,
     .menu__btn > span::after {
         display: block;
-        position: absolute;
+        position: fixed;
         width: 100%;
         height: 2px;
         background-color: #616161;
@@ -398,33 +407,48 @@ span.active a:after,
         flex-wrap: wrap;
 
     }
+    .search {
+        display: none;
+    }
+    .contact {
+        display: none;
+    }
+    .dropdown{
+        display: none;
+    }
+    .icon img{
+        margin-left: 100px;
+        height: 40px;
+        width: auto;
+    }
+    .menu__btn {
+        display: flex; /* используем flex для центрирования содержимого */
+        align-items: center;  /* центрируем содержимое кнопки */
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        width: 26px;
+        height: 26px;
+        cursor: pointer;
+        z-index: 1;
+    }
+    /* добавляем "гамбургер" */
+    .menu__btn > span,
+    .menu__btn > span::before,
+    .menu__btn > span::after {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: #616161;
+    }
 }
 
 @media screen and (max-width: 1024px) {
     .card {
         flex: 40%;
+
     }
-    /*.menu__btn {*/
-    /*    display: none; !* используем flex для центрирования содержимого *!*/
-    /*    align-items: center;  !* центрируем содержимое кнопки *!*/
-    /*    position: fixed;*/
-    /*    top: 20px;*/
-    /*    left: 20px;*/
-    /*    width: 26px;*/
-    /*    height: 26px;*/
-    /*    cursor: pointer;*/
-    /*    z-index: 1;*/
-    /*}*/
-    /*!* добавляем "гамбургер" *!*/
-    /*.menu__btn > span,*/
-    /*.menu__btn > span::before,*/
-    /*.menu__btn > span::after {*/
-    /*    display: none;*/
-    /*    position: absolute;*/
-    /*    width: 100%;*/
-    /*    height: 2px;*/
-    /*    background-color: #616161;*/
-    /*}*/
 }
 
 
